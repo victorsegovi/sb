@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { FaPlay, FaPause } from "react-icons/fa";
 import FacebookReviews from "./components/FacebookReviews";
+import WhatsappButton from "./components/Whatsapp";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
@@ -56,6 +57,7 @@ export default function Home() {
     <>
       <Header active={"Home"}></Header>
       <main className="overflow-hidden">
+        <WhatsappButton/>
         <motion.div
           id="hero-section"
           className="bg-image-hero flex flex-col justify-between lg:flex-row min-h-screen"
@@ -70,7 +72,7 @@ export default function Home() {
             variants={fadeInUp}
           >
             <motion.h1
-              className={`text-4xl font-bold text-[#2f2f2f]`}
+              className={`text-4xl font-bold text-[#2f2f2f] text-justify`}
               initial="hidden"
               animate="visible"
               variants={fadeInRight}
@@ -78,7 +80,7 @@ export default function Home() {
               Guarantee the comfort of your home
             </motion.h1>
             <motion.h4
-              className={` text-2xl text-[#2f2f2f]`}
+              className={` text-2xl text-[#2f2f2f] text-justify`}
               initial="hidden"
               animate="visible"
               variants={fadeInRight}
@@ -87,7 +89,7 @@ export default function Home() {
               Heating and Dryer Vent Cleaning
             </motion.h4>
             <motion.a
-              className="p-3 w-[60%] bg-[#0170B9] font-medium text-[#FFFFFF] hover:bg-[#47b6ff] cursor-pointer"
+              className="p-3 w-full bg-[#0170B9] font-medium text-[#FFFFFF] hover:bg-[#47b6ff] cursor-pointer"
               initial="hidden"
               animate="visible"
               variants={fadeInRight}
@@ -140,7 +142,7 @@ export default function Home() {
               >
                 Committed to keeping your home Comfortable!
               </motion.h3>
-              <motion.p
+              <motion.p className="text-justify"
                 initial="hidden"
                 animate={scrollNumber > 800 ? "visible" : "hidden"}
                 variants={fadeInUp}
@@ -153,6 +155,38 @@ export default function Home() {
                 comfortable.
               </motion.p>
             </motion.div>
+          </motion.div>
+        </motion.div>
+        <motion.div id="experience" className="bg-[#2563eb] flex flex-col">
+          <motion.div className="p-10 flex flex-col justify-center items-center bg-[#FFFFFF] rounded-b-[16%] gap-4">
+            {/* <motion.h2
+              className="text-[#2f2f2f] text-2xl"
+              initial="hidden"
+              animate={scrollNumber > 900 ? "visible" : "hidden"}
+              variants={fadeInRight}
+            >
+              Our Experience Speaks for itself
+            </motion.h2> */}
+            {/* <FacebookReviews></FacebookReviews> */}
+          </motion.div>
+          <motion.div className="w-1/2 self-center pt-10 pb-10 flex flex-col gap-4 lg:flex-row flex-wrap">
+          <motion.h2
+              className="text-[#FAFAFA] text-2xl w-full"
+              initial="hidden"
+              animate={scrollNumber > 900 ? "visible" : "hidden"}
+              variants={fadeInRight}
+            >
+              Our Experience Speaks for itself
+            </motion.h2>
+            <ul className="lg:self-center text-[#FAFAFA]">
+              <li>Over 10 years of experience</li>
+              <li>100% satisfied customers</li>
+              <li>+800 homes served in Dallas and the surrounding areas</li>
+              <li>+1000 Free Diagnostics</li>
+              <li>+200 AC Repaired and Restored</li>
+              <li>+500 Dryer cleaning</li>
+              <li>+800 Ducts Services</li>
+            </ul>
             <div className="relative">
               <motion.video
                 ref={videoRef}
@@ -174,34 +208,6 @@ export default function Home() {
             </div>
           </motion.div>
         </motion.div>
-        <motion.div id="experience" className="bg-[#2563eb] flex flex-col">
-          <motion.div className="p-10 flex flex-col justify-center items-center bg-[#FFFFFF] rounded-b-[16%] gap-4">
-            <motion.h2
-              className="text-[#2f2f2f] text-2xl"
-              initial="hidden"
-              animate={scrollNumber > 900 ? "visible" : "hidden"}
-              variants={fadeInRight}
-            >
-              Our Experience Speaks for itself
-            </motion.h2>
-            {/* <FacebookReviews></FacebookReviews> */}
-          </motion.div>
-          <motion.div className="w-1/2 self-center pt-10 pb-10 flex flex-col gap-4 lg:flex-row">
-            <ul className="lg:self-center text-[#FAFAFA]">
-              <li>Over 10 years of experience</li>
-              <li>100% satisfied customers</li>
-              <li>+800 homes served in Dallas and the surrounding areas</li>
-              <li>+1000 Free Diagnostics</li>
-              <li>+200 AC Repaired and Restored</li>
-              <li>+500 Dryer cleaning</li>
-              <li>+800 Ducts Services</li>
-            </ul>
-            <motion.div
-              className="rounded-xl h-[400px] w-full bg-center bg-cover"
-              style={{ backgroundImage: "url(/hero-banner.jpg)" }}
-            ></motion.div>
-          </motion.div>
-        </motion.div>
         <motion.div
           id="services"
           className="p-10 flex flex-wrap gap-4 justify-between"
@@ -220,24 +226,18 @@ export default function Home() {
             animate={scrollNumber > 1700 ? "visible" : "hidden"}
             variants={fadeInRight}
           >
-            <motion.div className="h-[370px] overflow-hidden">
-              <Image
-                src="/ac-maintenance.jpeg"
-                alt="AC Maintenance"
-                height={370}
-                width={470}
-              />
+            <motion.div className="h-[470px] overflow-hidden w-full bg-cover bg-center" style={{backgroundImage: "url(/ac-maintenance.jpeg)"}}>
             </motion.div>
             <motion.h3 className="text-2xl font-bold text-[#2f2f2f]">
               AC Maintenance
             </motion.h3>
-            <motion.p className="text-[#2f2f2f]">
+            <motion.p className="text-[#2f2f2f] text-justify">
               Keep your Air Conditioning system running with our professional
               service. Regular maintenance ensures optimal performance, extends
               the life of your unit, and helps lower energy bills by improving
               efficiency.
             </motion.p>
-            <motion.a className="w-full text-center p-3 bg-[#0170B9] font-medium text-[#FFFFFF] hover:bg-[#47b6ff] transition-all duration-500 cursor-pointer">
+            <motion.a className="w-full text-center bg-center bg-cover p-3 bg-[#0170B9] font-medium text-[#FFFFFF] hover:bg-[#47b6ff] transition-all duration-500 cursor-pointer">
               Schedule Service
             </motion.a>
           </motion.div>
@@ -247,18 +247,12 @@ export default function Home() {
             animate={scrollNumber > 1700 ? "visible" : "hidden"}
             variants={fadeInRight}
           >
-            <motion.div className="h-[370px] overflow-hidden">
-              <Image
-                src="/dryer-vent-cleaning.jpeg"
-                alt="Dryer Vent Cleaning"
-                height={370}
-                width={470}
-              />
+            <motion.div className="h-[470px] overflow-hidden w-full bg-cover bg-center" style={{backgroundImage:"url(/dryer-vent-cleaning.jpeg)"}}>
             </motion.div>
             <motion.h3 className="text-2xl font-bold text-[#2f2f2f]">
               Dryer Vent Cleaning
             </motion.h3>
-            <motion.p className="text-[#2f2f2f]">
+            <motion.p className="text-[#2f2f2f] text-justify">
               Our service ensures your home stays safe and your dryer runs
               efficiently. Over time, lint and debris accumulate in dryer vents,
               reducing performance. With our cleaning process, we remove
@@ -275,18 +269,12 @@ export default function Home() {
             animate={scrollNumber > 1700 ? "visible" : "hidden"}
             variants={fadeInRight}
           >
-            <motion.div className="h-[370px] overflow-hidden">
-              <Image
-                src="/air-duct-cleaning.jpeg"
-                alt="Air Duct Cleaning"
-                height={370}
-                width={370}
-              />
+            <motion.div className="h-[470px] overflow-hidden bg-cover bg-center w-full" style={{backgroundImage: "url(/air-duct-cleaning.jpeg)"}}>
             </motion.div>
             <motion.h3 className="text-[#2f2f2f] text-2xl font-bold">
               Air Duct Cleaning
             </motion.h3>
-            <motion.p className="text-[#2f2f2f]">
+            <motion.p className="text-[#2f2f2f] text-justify">
               Essential for Maintaining Good air quality in your home. Dust and
               Dirt build up in the ducts, affecting the efficiency of your air
               conditioning system. We recommend your air ducts receive a
@@ -472,7 +460,7 @@ export default function Home() {
               Contact Us Today
             </motion.h2>
             <motion.p
-              className="text-[#2f2f2f]"
+              className="text-[#2f2f2f] text-justify"
               initial="hidden"
               animate={scrollNumber > 2700 ? "visible" : "hidden"}
               variants={{
