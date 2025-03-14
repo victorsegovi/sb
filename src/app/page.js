@@ -125,27 +125,21 @@ export default function Home() {
         </motion.div>
         <motion.div id="about-us" className="bg-[#353941] p-10">
           <motion.div className="flex flex-col justify-center items-center md:flex-row p-10 gap-4 text-[#FFFFFF]">
-            <motion.div className="md:w-1/2">
+            <motion.div className="md:w-1/2"
+                            initial="hidden"
+                            animate={scrollNumber > 400 ? "visible" : "hidden"}
+                            variants={fadeInUp}>
               <motion.h2
                 className="text-4xl"
-                initial="hidden"
-                animate={scrollNumber > 800 ? "visible" : "hidden"}
-                variants={fadeInUp}
               >
                 About Us
               </motion.h2>
               <motion.h3
                 className="text-2xl"
-                initial="hidden"
-                animate={scrollNumber > 800 ? "visible" : "hidden"}
-                variants={fadeInUp}
               >
                 Committed to keeping your home Comfortable!
               </motion.h3>
               <motion.p className="text-justify"
-                initial="hidden"
-                animate={scrollNumber > 800 ? "visible" : "hidden"}
-                variants={fadeInUp}
               >
                 Sanchez Brothers AC, is a family company specialized in
                 providing maintenance and repair solutions for air conditioning
@@ -157,7 +151,6 @@ export default function Home() {
             </motion.div>
           </motion.div>
         </motion.div>
-        <motion.div id="experience" className="bg-[#2563eb] flex flex-col">
           <motion.div className="p-10 flex flex-col justify-center items-center bg-[#FFFFFF] rounded-b-[16%] gap-4">
             {/* <motion.h2
               className="text-[#2f2f2f] text-2xl"
@@ -169,16 +162,17 @@ export default function Home() {
             </motion.h2> */}
             {/* <FacebookReviews></FacebookReviews> */}
           </motion.div>
-          <motion.div className="w-1/2 self-center pt-10 pb-10 flex flex-col gap-4 lg:flex-row flex-wrap">
-          <motion.h2
-              className="text-[#FAFAFA] text-2xl w-full"
-              initial="hidden"
-              animate={scrollNumber > 900 ? "visible" : "hidden"}
-              variants={fadeInRight}
+        <motion.div id="experience" className="bg-linear-180 to-[#2563eb] from-[#021c55] flex flex-col p-10 gap-4 justify-center items-center">
+            <motion.div className="w-1/2 max-w-[400px] gap-4 flex flex-col"
+                          initial="hidden"
+                          animate={scrollNumber > 900 ? "visible" : "hidden"}
+                          variants={fadeInRight}>
+            <motion.h2
+              className="text-[#FAFAFA] text-4xl w-full"
             >
               Our Experience Speaks for itself
             </motion.h2>
-            <ul className="lg:self-center text-[#FAFAFA]">
+            <ul className="lg:self-center text-[#FAFAFA] text-justify">
               <li>Over 10 years of experience</li>
               <li>100% satisfied customers</li>
               <li>+800 homes served in Dallas and the surrounding areas</li>
@@ -187,7 +181,11 @@ export default function Home() {
               <li>+500 Dryer cleaning</li>
               <li>+800 Ducts Services</li>
             </ul>
-            <div className="relative">
+            </motion.div>
+            <motion.div className="relative w-1/2 md:w-[400px]"
+                          initial="hidden"
+                          animate={scrollNumber > 900 ? "visible" : "hidden"}
+                          variants={fadeInUp}>
               <motion.video
                 ref={videoRef}
                 src="/video-laura-home.mp4"
@@ -205,8 +203,8 @@ export default function Home() {
               >
                 {isPlaying ? <FaPause size={24} /> : <FaPlay size={24} />}
               </motion.button>
-            </div>
-          </motion.div>
+            </motion.div>
+
         </motion.div>
         <motion.div
           id="services"
@@ -366,68 +364,38 @@ export default function Home() {
         </motion.div>
         <motion.div
           id="business"
-          className="flex flex-col lg:flex-row lg:flex-wrap justify-center p-10 items-center grayscale-100 bg-[#FFFFFF]"
+          className="flex flex-wrap justify-between p-10 items-center gap-10 grayscale-100 bg-[#FFFFFF]"
           initial="hidden"
           animate={{ opacity: 1, transition: { duration: 0.8 } }}
         >
-          <motion.div
-            className="h-[250px] lg:w-1/2 lg:flex lg:justify-center lg:items-center"
-            initial="hidden"
-            animate={{
-              opacity: 1,
-              x: 0,
-              transition: { duration: 0.8, delay: 0.2 },
-            }}
-            style={{ x: -50 }}
-          >
             <motion.div
               initial="hidden"
               animate={{
                 opacity: 1,
                 transition: { duration: 0.8, delay: 0.4 },
               }}
+              className="bg-cover bg-center h-[250px] w-[160px]"
+              style={{backgroundImage: "url(/dryer-certified.jpeg)"}}
             >
-              <Image
-                src="/dryer-certified.jpeg"
-                alt="Dryer Certified"
-                height={250}
-                width={250}
-              />
             </motion.div>
-          </motion.div>
-          <motion.div
-            className="h-[250px] lg:w-1/2 lg:flex lg:justify-center lg:items-center"
-            initial="hidden"
-            animate={{
-              opacity: 1,
-              x: 0,
-              transition: { duration: 0.8, delay: 0.4 },
-            }}
-            style={{ x: 50 }}
-          >
             <motion.div
               initial="hidden"
               animate={{
                 opacity: 1,
                 transition: { duration: 0.8, delay: 0.6 },
               }}
+              className="bg-contain bg-no-repeat bg-center h-[250px] w-[160px]"
+              style={{backgroundImage: "url(/epa-certification.jpg)"}}
             >
-              <Image
-                src="/epa-certification.jpg"
-                height={250}
-                width={250}
-                alt="Epa Certification"
-              />
             </motion.div>
-          </motion.div>
           <motion.div
-            className="h-[250px] w-full lg:flex lg:justify-center bg-center bg-no-repeat"
+            className="h-[250px] w-[300px] bg-center bg-contain bg-no-repeat"
             style={{ backgroundImage: "url('/esco-logo.png')" }}
             initial="hidden"
             animate={{ opacity: 1, transition: { duration: 0.8, delay: 0.6 } }}
           ></motion.div>
           <motion.div
-            className="h-[200px] w-[250px] lg:flex lg:justify-center bg-center bg-cover"
+            className="h-[250px] w-[200px]  bg-center bg-cover"
             style={{ backgroundImage: "url('/energy-skilled.jpeg')" }}
             initial="hidden"
             animate={{ opacity: 1, transition: { duration: 0.8, delay: 0.6 } }}
@@ -440,7 +408,7 @@ export default function Home() {
           animate={{ opacity: 1, transition: { duration: 0.8 } }}
         >
           <motion.div
-            className="flex flex-col gap-4 md:w-1/2"
+            className="flex flex-col gap-4 lg:w-1/2"
             initial="hidden"
             animate={scrollNumber > 2700 ? "visible" : "hidden"}
             variants={{
