@@ -1,9 +1,66 @@
 "use client"
 
-import {motion} from "framer-motion"
+import {motion, AnimatePresence} from "framer-motion"
 import Header from "@/app/components/Header";
+import { useState, useEffect } from "react";
 
+const fadeInUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  };
+  
+  const fadeInRight = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 1 } },
+  };
+  
+  function getScrollY() {
+    if (typeof window !== "undefined") {
+      return window.scrollY;
+    }
+    return 0;
+  }
 export default function EvaporatorCleaning(){
+    const [selectedQuestion, setSelectedQuestion] = useState(null);
+    const handleSelectChange = (event) => {
+        setSelectedQuestion(event.target.value);
+      };
+
+      const [scrollNumber, setScrollNumber] = useState(0);
+      useEffect(() => {
+        const handleScroll = () => {
+          setScrollNumber(() => getScrollY());
+        };
+    
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+          window.removeEventListener("scroll", handleScroll);
+        };
+      }, []);
+  
+
+      const questions = {
+        q1: {
+          question: "Why is evaporator coil cleaning important?",
+          answer:
+            "Evaporator coil cleaning is essential to maintain the efficiency and performance of your air conditioning system. Dirty coils can reduce cooling capacity, increase energy consumption, and lead to unpleasant odors.",
+        },
+        q2: {
+          question: "How often should I have my evaporator coils cleaned?",
+          answer:
+            "We recommend cleaning your evaporator coils at least once a year. However, if you live in a dusty environment or use your air conditioner frequently, more frequent cleanings may be necessary.",
+        },
+        q3: {
+          question: "What are the signs that my evaporator coils need cleaning",
+          answer:
+            "Common signs include reduced cooling efficiency, higher energy bills, poor airflow, unusual noises, or a musty smell when the system is running.",
+        },
+        q4: {
+            question: "Will cleaning the evaporator coils improve energy efficiency?",
+            answer: "Yes, clean evaporator coils allow your system to run more efficiently, reducing energy consumption and potentially lowering your utility bills."
+        }
+      };
+
     return(
         <>
             <Header active={"Services"}></Header>
@@ -30,6 +87,42 @@ export default function EvaporatorCleaning(){
               </p>
             </motion.div>
           </motion.div>
+          <motion.div className="lg:w-[60%] flex flex-col w-full">
+          <motion.h2
+            className="text-4xl text-[#0170b9] mb-10"
+            initial="hidden"
+            variants={fadeInUp}
+            animate={scrollNumber > 50 ? "visible" : "hidden"}
+          >
+            Frequently Asked Questions
+          </motion.h2>
+          <motion.select
+            onChange={handleSelectChange}
+            className="p-4 border-[#0170b9] border-2 font-medium rounded-t-2xl text-xl"
+            initial="hidden"
+            variants={fadeInUp}
+            animate={scrollNumber > 50 ? "visible" : "hidden"}
+          >
+            <motion.option value={""}>Select a question</motion.option>
+            <motion.option value={"q1"}>{questions.q1.question}</motion.option>
+            <motion.option value={"q2"}>{questions.q2.question}</motion.option>
+            <motion.option value={"q3"}>{questions.q3.question}</motion.option>
+          </motion.select>
+          <motion.div>
+            <AnimatePresence>
+              {selectedQuestion && (
+                <motion.div
+                  initial={scrollNumber > 50 && { opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  className="p-10 bg-[#0170b9] text-[#fafafa] rounded-b-xl text-xl"
+                >
+                  <p>{questions[selectedQuestion].answer}</p>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+        </motion.div>
             </main>
         </>
     )
