@@ -369,7 +369,7 @@ export default function Home() {
         </motion.div>
         <motion.div
           id="business"
-          className="flex flex-wrap justify-between p-10 items-center gap-10 grayscale-100 bg-[#FFFFFF]"
+          className="flex flex-wrap justify-center p-10 items-center gap-10 grayscale-100 bg-[#FFFFFF]"
           initial="hidden"
           animate={{ opacity: 1, transition: { duration: 0.8 } }}
         >

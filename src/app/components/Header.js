@@ -86,9 +86,9 @@ export default function Header({ active }) {
               <div onClick={() => router.push("/services/dryer-vent-services")}>
                 Dryer Vent Services
               </div>
-              <div onClick={() => router.push("/services/customer-services")}>
+              {/* <div onClick={() => router.push("/services/customer-services")}>
                 Customer Services 7 Days a Week
-              </div>
+              </div> */}
             </div>
             <a className="flex items-center justify-center" onClick={handleToggle}>
               Services
@@ -184,9 +184,9 @@ export default function Header({ active }) {
               <a onClick={() => router.push("/services/dryer-vent-services")}>
                 Dryer Vent Services
               </a>
-              <a onClick={() => router.push("/services/customer-services")}>
+              {/* <a onClick={() => router.push("/services/customer-services")}>
                 Customer Services 7 Days a Week
-              </a>
+              </a> */}
             </div>
             <a>Services</a>
           </li>
