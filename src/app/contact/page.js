@@ -4,7 +4,11 @@ import Header from "../components/Header";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import WhatsappButton from "../components/Whatsapp";
-import Map from "../components/Map";
+import dynamic from 'next/dynamic';
+
+const Map = dynamic(() => import('../components/Map'), {
+  ssr: false,
+});
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
