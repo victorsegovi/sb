@@ -39,22 +39,22 @@ export default function RefrigerantRecharge(){
     return(
         <>
         <Header active={"Services"}></Header>
-        <main>
+        <main className="flex flex-col items-center">
           <WhatsappButton/>
           <motion.div className="flex flex-col gap-4 p-10 text-justify items-center"
           initial="hidden"
           animate="visible"
           variants={fadeInRight}>
-            <h1 className="text-4xl text-[#0170b9] w-full lg:w-1/4">Refrigerant Recharge</h1>
-            <p className=" w-full lg:w-1/4">We provide professional refrigerant recharge services to restore your AC&apos;s cooling power and efficiency.</p>
+            <h1 className="text-4xl text-[#0170b9] w-full lg:w-1/2">Refrigerant Recharge</h1>
+            <p className=" w-full lg:w-1/2">We provide professional refrigerant recharge services to restore your AC&apos;s cooling power and efficiency.</p>
           </motion.div>
           <motion.div className="flex flex-col gap-4 p-10 text-justify bg-[#0170b9] text-[#FAFAFA] items-center"
                     initial="hidden"
                     animate="visible"
                     variants={fadeInUp}>
-            <h2 className="text-4xl w-full lg:w-1/4">Why is Refrigerant Recharge Important?</h2>
-            <p className=" w-full lg:w-1/4">Refrigerant is essential for your air conditioning system to absorb and release heat properly. Over time, leaks or system inefficiencies can lead to refrigerant loss, resulting in:</p>
-            <ul className=" w-full lg:w-1/4">
+            <h2 className="text-4xl w-full lg:w-1/2">Why is Refrigerant Recharge Important?</h2>
+            <p className=" w-full lg:w-1/2">Refrigerant is essential for your air conditioning system to absorb and release heat properly. Over time, leaks or system inefficiencies can lead to refrigerant loss, resulting in:</p>
+            <ul className=" w-full lg:w-1/2">
               <li>Insufficient cooling performance</li>
               <li>Higher energy bills</li>
               <li>Increased strain on your AC unit</li>
@@ -64,13 +64,19 @@ export default function RefrigerantRecharge(){
           initial="hidden"
           animate={scrollNumber > 300? "visible": "hidden"}
           variants={fadeInRight}>
-            <h2 className="text-4xl text-[#0170b9] w-full lg:w-1/4">Our Refrigerant Recharge Process</h2>
-            <ul className="w-full lg:w-1/4">
+            <h2 className="text-4xl text-[#0170b9] w-full lg:w-1/2">Our Refrigerant Recharge Process</h2>
+            <ul className="w-full lg:w-1/2">
               <li>Inspection & Leak Detection : We assess your AC system to check for leaks or other issues.</li>
               <li>Proper Refrigerant Levels : Our technicians ensure your system is recharged with the right amount of refrigerant for optimal performance.</li>
               <li>Efficiency & Performance Testing : We verify that your AC is cooling efficiently and operating at peak performance.</li>
             </ul>
           </motion.div>
+          <motion.a
+          href="sms:9407583617"
+          className="w-full lg:w-[60%] text-center p-3 bg-[#0170B9] font-medium text-[#FFFFFF] hover:bg-[#47b6ff] transition-all duration-500 m-10"
+        >
+          Schedule Service
+        </motion.a>
         </main>
         </>
     )

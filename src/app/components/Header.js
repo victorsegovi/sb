@@ -60,18 +60,52 @@ export default function Header({ active }) {
                 dropdownToggle ? "block" : "hidden"
               } flex flex-col border-t-[#0170B9] absolute top-[120%] left-[-50%] w-[250px] bg-[#FAFAFA] p-4 border-t-2 shadow-2xs gap-4`}
             >
-              <div
-                className="flex flex-col gap-1"
-              >
+              <div className="flex flex-col gap-1">
                 <div className="flex gap-1 justify-between items-center w-full">
-                  <a onClick={() => router.push("/services/ac-maintenance")}>AC Maintenance</a>
+                  <a onClick={() => router.push("/services/ac-maintenance")}>
+                    AC Maintenance
+                  </a>
                   <IoIosArrowDown onClick={handleACMClick} />
                 </div>
-                <div className={`flex flex-col gap-4 p-2 border-l-2 border-l-[#0170B9] ${ACMToggle? "flex":"hidden"}`}>
-                  <a onClick={()=>router.push('/services/ac-maintenance/evaporator-cleaning')}>Evaporator Cleaning</a>
-                  <a onClick={()=>router.push('/services/ac-maintenance/capacitor-replacement')}>Capacitor Replacement</a>
-                  <a onClick={()=>router.push('/services/ac-maintenance/condenser-cleaning')}>Condenser Cleaning</a>
-                  <a onClick={()=>router.push('/services/ac-maintenance/refrigerant-recharge')}>Refrigerant Recharge</a>
+                <div
+                  className={`flex flex-col gap-4 p-2 border-l-2 border-l-[#0170B9] ${
+                    ACMToggle ? "flex" : "hidden"
+                  }`}
+                >
+                  <a
+                    onClick={() =>
+                      router.push(
+                        "/services/ac-maintenance/evaporator-cleaning"
+                      )
+                    }
+                  >
+                    Evaporator Cleaning
+                  </a>
+                  <a
+                    onClick={() =>
+                      router.push(
+                        "/services/ac-maintenance/capacitor-replacement"
+                      )
+                    }
+                  >
+                    Capacitor Replacement
+                  </a>
+                  <a
+                    onClick={() =>
+                      router.push("/services/ac-maintenance/condenser-cleaning")
+                    }
+                  >
+                    Condenser Cleaning
+                  </a>
+                  <a
+                    onClick={() =>
+                      router.push(
+                        "/services/ac-maintenance/refrigerant-recharge"
+                      )
+                    }
+                  >
+                    Refrigerant Recharge
+                  </a>
                 </div>
               </div>
               <div onClick={() => router.push("/services/heating")}>
@@ -86,13 +120,16 @@ export default function Header({ active }) {
               <div onClick={() => router.push("/services/dryer-vent-services")}>
                 Dryer Vent Services
               </div>
-              {/* <div onClick={() => router.push("/services/customer-services")}>
+              <div onClick={() => router.push("/services/customer-services")}>
                 Customer Services 7 Days a Week
-              </div> */}
+              </div>
             </div>
-            <a className="flex items-center justify-center" onClick={handleToggle}>
+            <a
+              className="flex items-center justify-center"
+              onClick={handleToggle}
+            >
               Services
-              <MdKeyboardArrowDown/>
+              <MdKeyboardArrowDown />
             </a>
           </li>
           <li
@@ -139,7 +176,7 @@ export default function Header({ active }) {
           onClick={handleToggleMobile}
         />
         <ul
-          className={`flex flex-col justify-center items-center gap-4 font-medium absolute bg-[#FAFAFA] w-full h-screen transition-all duration-1000 left-0 top-0 ${
+          className={`flex flex-col pt-[20%] items-center gap-4 font-medium absolute bg-[#FAFAFA] w-full h-screen transition-all duration-1000 left-0 top-0 ${
             dropdownMobileToggle ? "top-0" : "top-[-100vh]"
           }`}
         >
@@ -159,7 +196,6 @@ export default function Header({ active }) {
             <a onClick={() => router.push("/about-us")}>About Us</a>
           </li>
           <li
-            onClick={handleToggle}
             className={` cursor-pointer relative ${
               active == "Services" ? "font-normal text-gray-600" : "font-medium"
             }`}
@@ -167,28 +203,79 @@ export default function Header({ active }) {
             <div
               className={`${
                 dropdownToggle ? "block" : "hidden"
-              } flex flex-col border-t-[#0170B9] absolute top-[120%] left-[-100%] w-[200px] bg-[#FAFAFA] p-4 border-t-2 shadow-2xs gap-4`}
+              } flex flex-col border-t-[#0170B9] absolute top-[120%] left-[-100%] w-[250px] bg-[#FAFAFA] p-4 border-t-2 shadow-2xs gap-4`}
             >
-              <a className="flex justify-between items-center">
-                <span onClick={() => router.push("/services/ac-maintenance")}>
-                  AC Maintenance
-                </span>
-              </a>
-              <a onClick={() => router.push("/services/heating")}>Heating</a>
-              <a onClick={() => router.push("/services/uv-light-services")}>
+              <div className="flex flex-col gap-1">
+                <div className="flex gap-1 justify-between items-center w-full">
+                  <a onClick={() => router.push("/services/ac-maintenance")}>
+                    AC Maintenance
+                  </a>
+                  <IoIosArrowDown onClick={handleACMClick} />
+                </div>
+                <div
+                  className={`flex flex-col gap-4 p-2 border-l-2 border-l-[#0170B9] ${
+                    ACMToggle ? "flex" : "hidden"
+                  }`}
+                >
+                  <a
+                    onClick={() =>
+                      router.push(
+                        "/services/ac-maintenance/evaporator-cleaning"
+                      )
+                    }
+                  >
+                    Evaporator Cleaning
+                  </a>
+                  <a
+                    onClick={() =>
+                      router.push(
+                        "/services/ac-maintenance/capacitor-replacement"
+                      )
+                    }
+                  >
+                    Capacitor Replacement
+                  </a>
+                  <a
+                    onClick={() =>
+                      router.push("/services/ac-maintenance/condenser-cleaning")
+                    }
+                  >
+                    Condenser Cleaning
+                  </a>
+                  <a
+                    onClick={() =>
+                      router.push(
+                        "/services/ac-maintenance/refrigerant-recharge"
+                      )
+                    }
+                  >
+                    Refrigerant Recharge
+                  </a>
+                </div>
+              </div>
+              <div onClick={() => router.push("/services/heating")}>
+                Heating
+              </div>
+              <div onClick={() => router.push("/services/uv-light-services")}>
                 UV Light Services
-              </a>
-              <a onClick={() => router.push("/services/air-duct-services")}>
+              </div>
+              <div onClick={() => router.push("/services/air-duct-services")}>
                 Air Duct Services
-              </a>
-              <a onClick={() => router.push("/services/dryer-vent-services")}>
+              </div>
+              <div onClick={() => router.push("/services/dryer-vent-services")}>
                 Dryer Vent Services
-              </a>
-              {/* <a onClick={() => router.push("/services/customer-services")}>
+              </div>
+              <div onClick={() => router.push("/services/customer-services")}>
                 Customer Services 7 Days a Week
-              </a> */}
+              </div>
             </div>
-            <a>Services</a>
+            <a
+              className="flex items-center justify-center"
+              onClick={handleToggle}
+            >
+              Services
+              <MdKeyboardArrowDown />
+            </a>
           </li>
           <li
             className={` cursor-pointer ${

@@ -1,14 +1,9 @@
 "use client";
 
-import Header from "../components/Header";
+import Header from "@/app/components/Header";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import WhatsappButton from "../components/Whatsapp";
-import dynamic from 'next/dynamic';
-
-const Map = dynamic(() => import('../components/Map'), {
-  ssr: false,
-});
+import WhatsappButton from "@/app/components/Whatsapp";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
@@ -29,8 +24,6 @@ function getScrollY() {
 
 export default function Contact() {
   const [scrollNumber, setScrollNumber] = useState(0);
-  const center = [32.78, -97.30];
-  const zoom = 13;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,7 +66,7 @@ export default function Contact() {
                 visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
               }}
             >
-              Contact Us Today
+              Customer Service 7 days a week
             </motion.h2>
             <motion.p
               className="text-[#2f2f2f] text-justify"
@@ -92,10 +85,11 @@ export default function Contact() {
               system, call now 940-758-3617 or filling out{" "}
               <strong>&quot;Schedule your free visit&quot;</strong> form. Our
               team is happy to assist you in maintaining the quality and comfort
-              of your home.
+              of your home every day of the week.
             </motion.p>
             <motion.a
               className="p-3 w-full bg-[#0170B9] font-medium text-[#FFFFFF] hover:bg-[#47b6ff] transition-all duration-500 cursor-pointer text-center"
+              href="sms:9407583617"
               initial="hidden"
               animate="visible"
               variants={{
@@ -170,9 +164,6 @@ export default function Contact() {
               Request My Visit
             </button>
           </motion.form>
-        </motion.div>
-        <motion.div className="p-20">
-          <Map center={center} zoom={zoom}></Map>
         </motion.div>
       </main>
     </>

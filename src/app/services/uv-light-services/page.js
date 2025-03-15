@@ -142,7 +142,7 @@ export default function UVLight() {
             className="text-4xl text-[#0170b9] mb-10"
             initial="hidden"
             variants={fadeInUp}
-            animate={scrollNumber > 350 ? "visible" : "hidden"}
+            animate={scrollNumber > 50 ? "visible" : "hidden"}
           >
             Frequently Asked Questions
           </motion.h2>
@@ -151,7 +151,7 @@ export default function UVLight() {
             className="p-4 border-[#0170b9] border-2 font-medium rounded-t-2xl text-xl"
             initial="hidden"
             variants={fadeInUp}
-            animate={scrollNumber > 400 ? "visible" : "hidden"}
+            animate={scrollNumber > 50 ? "visible" : "hidden"}
           >
             <motion.option value={""}>Select a question</motion.option>
             <motion.option value={"q1"}>{questions.q1.question}</motion.option>
@@ -162,7 +162,7 @@ export default function UVLight() {
             <AnimatePresence>
               {selectedQuestion && (
                 <motion.div
-                  initial={scrollNumber > 400 && { opacity: 0, y: 20 }}
+                  initial="hidden"
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 20 }}
                   className="p-10 bg-[#0170b9] text-[#fafafa] rounded-b-xl text-xl"
@@ -173,6 +173,12 @@ export default function UVLight() {
             </AnimatePresence>
           </motion.div>
         </motion.div>
+        <motion.a
+          href="sms:9407583617"
+          className="w-full lg:w-[60%] text-center p-3 bg-[#0170B9] font-medium text-[#FFFFFF] hover:bg-[#47b6ff] transition-all duration-500"
+        >
+          Schedule Service
+        </motion.a>
       </main>
     </>
   );

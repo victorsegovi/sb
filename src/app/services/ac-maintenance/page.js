@@ -37,7 +37,7 @@ export default function ACMaintenance() {
     <>
       <Header active={"Services"}></Header>
       <main className="flex flex-col items-center p-10 gap-10">
-        <WhatsappButton/>
+        <WhatsappButton />
         <motion.div
           className="flex flex-col items-center w-full gap-4"
           initial="hidden"
@@ -93,10 +93,12 @@ export default function ACMaintenance() {
           >
             Important points we can check in your system.
           </motion.h2>
-          <motion.ul className="flex flex-col gap-2"
-                      animate={scrollNumber > 600 ? "visible" : "hidden"}
-                      initial="hidden"
-                      variants={fadeInRight}>
+          <motion.ul
+            className="flex flex-col gap-2"
+            animate={scrollNumber > 600 ? "visible" : "hidden"}
+            initial="hidden"
+            variants={fadeInRight}
+          >
             <li className="list-disc">
               Checking Refrigerant levels Thermostat settings & Operation to
               ensure comfort & lower cooling bills
@@ -125,9 +127,12 @@ export default function ACMaintenance() {
             <li className="list-disc">System Performance Check</li>
           </motion.ul>
         </motion.div>
-        <motion.a className="w-full lg:w-[60%] text-center p-3 bg-[#0170B9] font-medium text-[#FFFFFF] hover:bg-[#47b6ff] transition-all duration-500 cursor-pointer">
-              Schedule Service
-            </motion.a>
+        <motion.a
+          href="sms:9407583617"
+          className="w-full lg:w-[60%] text-center p-3 bg-[#0170B9] font-medium text-[#FFFFFF] hover:bg-[#47b6ff] transition-all duration-500"
+        >
+          Schedule Service
+        </motion.a>
       </main>
     </>
   );

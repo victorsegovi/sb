@@ -32,10 +32,16 @@ export default function Heating() {
             Money in the Long Run
           </motion.p>
         </motion.div>
-        <motion.div className="w-full lg:w-1/2 h-[600px] rounded-2xl bg-cover bg-center" style={{backgroundImage: "url(../heater.jpg)"}}
+        <motion.div className="w-full lg:w-1/2 h-[600px] border rounded-2xl bg-cover bg-center" style={{backgroundImage: "url(/heater.jpg)"}}
                   initial="hidden"
                   variants={fadeInUp}
                   animate="visible"></motion.div>
+                          <motion.a
+          href="sms:9407583617"
+          className="w-full lg:w-[60%] text-center p-3 bg-[#0170B9] font-medium text-[#FFFFFF] hover:bg-[#47b6ff] transition-all duration-500"
+        >
+          Schedule Service
+        </motion.a>
       </main>
     </>
   );

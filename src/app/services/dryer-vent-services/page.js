@@ -75,6 +75,12 @@ export default function DryerVent() {
                 <li className="list-disc"><strong>Professional and reliable service</strong></li>
             </motion.ul>
         </motion.div>
+        <motion.a
+          href="sms:9407583617"
+          className="w-full lg:w-[60%] text-center p-3 bg-[#0170B9] font-medium text-[#FFFFFF] hover:bg-[#47b6ff] transition-all duration-500 m-10"
+        >
+          Schedule Service
+        </motion.a>
       </main>
     </>
   );

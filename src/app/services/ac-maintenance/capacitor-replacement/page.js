@@ -38,7 +38,7 @@ export default function CapacitorReplacement() {
   return(
     <>
         <Header active="Services"></Header>
-        <main className="flex flex-col gap-10">
+        <main className="flex flex-col gap-10 items-center">
           <WhatsappButton/>
           <motion.div className="flex flex-col lg:flex-row gap-10 items-center justify-around p-10">
           <motion.div className="w-full lg:w-1/2 flex flex-col justify-between gap-4"
@@ -72,6 +72,12 @@ export default function CapacitorReplacement() {
               <li><strong>Extended Equipment Lifespan:</strong> Regular maintenance, including capacitor replacement, can prolong the life of your HVAC system.</li>
             </ul>
           </motion.div>
+          <motion.a
+          href="sms:9407583617"
+          className="w-full lg:w-[60%] text-center p-3 bg-[#0170B9] font-medium text-[#FFFFFF] hover:bg-[#47b6ff] transition-all duration-500 m-10"
+        >
+          Schedule Service
+        </motion.a>
         </main>
     </>
   )
