@@ -2,6 +2,7 @@
 import Header from "@/app/components/Header";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import WhatsappButton from "@/app/components/Whatsapp";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
@@ -36,6 +37,7 @@ export default function ACMaintenance() {
     <>
       <Header active={"Services"}></Header>
       <main className="flex flex-col items-center p-10 gap-10">
+        <WhatsappButton/>
         <motion.div
           className="flex flex-col items-center w-full gap-4"
           initial="hidden"

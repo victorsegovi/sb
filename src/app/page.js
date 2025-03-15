@@ -57,7 +57,7 @@ export default function Home() {
     <>
       <Header active={"Home"}></Header>
       <main className="overflow-hidden">
-        <WhatsappButton/>
+        <WhatsappButton />
         <motion.div
           id="hero-section"
           className="bg-image-hero flex flex-col justify-between lg:flex-row min-h-screen"
@@ -125,22 +125,17 @@ export default function Home() {
         </motion.div>
         <motion.div id="about-us" className="bg-[#353941] p-10">
           <motion.div className="flex flex-col justify-center items-center md:flex-row p-10 gap-4 text-[#FFFFFF]">
-            <motion.div className="md:w-1/2"
-                            initial="hidden"
-                            animate={scrollNumber > 400 ? "visible" : "hidden"}
-                            variants={fadeInUp}>
-              <motion.h2
-                className="text-4xl"
-              >
-                About Us
-              </motion.h2>
-              <motion.h3
-                className="text-2xl"
-              >
+            <motion.div
+              className="md:w-1/2"
+              initial="hidden"
+              animate={scrollNumber > 400 ? "visible" : "hidden"}
+              variants={fadeInUp}
+            >
+              <motion.h2 className="text-4xl">About Us</motion.h2>
+              <motion.h3 className="text-2xl">
                 Committed to keeping your home Comfortable!
               </motion.h3>
-              <motion.p className="text-justify"
-              >
+              <motion.p className="text-justify">
                 Sanchez Brothers AC, is a family company specialized in
                 providing maintenance and repair solutions for air conditioning
                 systems in homes and businesses, with years of experience, our
@@ -151,8 +146,8 @@ export default function Home() {
             </motion.div>
           </motion.div>
         </motion.div>
-          <motion.div className="p-10 flex flex-col justify-center items-center bg-[#FFFFFF] rounded-b-[16%] gap-4">
-            {/* <motion.h2
+        <motion.div className="p-10 flex flex-col justify-center items-center bg-[#FFFFFF] rounded-b-[16%] gap-4">
+          {/* <motion.h2
               className="text-[#2f2f2f] text-2xl"
               initial="hidden"
               animate={scrollNumber > 900 ? "visible" : "hidden"}
@@ -160,16 +155,19 @@ export default function Home() {
             >
               Our Experience Speaks for itself
             </motion.h2> */}
-            {/* <FacebookReviews></FacebookReviews> */}
-          </motion.div>
-        <motion.div id="experience" className="bg-linear-180 to-[#2563eb] from-[#021c55] flex flex-col p-10 gap-4 justify-center items-center">
-            <motion.div className="w-1/2 max-w-[400px] gap-4 flex flex-col"
-                          initial="hidden"
-                          animate={scrollNumber > 900 ? "visible" : "hidden"}
-                          variants={fadeInRight}>
-            <motion.h2
-              className="text-[#FAFAFA] text-4xl w-full"
-            >
+          {/* <FacebookReviews></FacebookReviews> */}
+        </motion.div>
+        <motion.div
+          id="experience"
+          className="bg-linear-180 to-[#2563eb] from-[#021c55] flex flex-col p-10 gap-4 justify-center items-center"
+        >
+          <motion.div
+            className="w-1/2 max-w-[400px] gap-4 flex flex-col"
+            initial="hidden"
+            animate={scrollNumber > 900 ? "visible" : "hidden"}
+            variants={fadeInRight}
+          >
+            <motion.h2 className="text-[#FAFAFA] text-4xl w-full">
               Our Experience Speaks for itself
             </motion.h2>
             <ul className="lg:self-center text-[#FAFAFA] text-justify">
@@ -181,30 +179,31 @@ export default function Home() {
               <li>+500 Dryer cleaning</li>
               <li>+800 Ducts Services</li>
             </ul>
-            </motion.div>
-            <motion.div className="relative w-1/2 md:w-[400px]"
-                          initial="hidden"
-                          animate={scrollNumber > 900 ? "visible" : "hidden"}
-                          variants={fadeInUp}>
-              <motion.video
-                ref={videoRef}
-                src="/video-laura-home.mp4"
-                className="md:w-[400px] w-[300px] rounded-3xl"
-                initial="hidden"
-                animate={scrollNumber > 800 ? "visible" : "hidden"}
-                variants={fadeInUp}
-              ></motion.video>
-              <motion.button
-                initial="hidden"
-                animate={scrollNumber > 800 ? "visible" : "hidden"}
-                variants={fadeInUp}
-                onClick={togglePlay}
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-50 rounded-full p-4 text-white"
-              >
-                {isPlaying ? <FaPause size={24} /> : <FaPlay size={24} />}
-              </motion.button>
-            </motion.div>
-
+          </motion.div>
+          <motion.div
+            className="relative w-1/2 md:w-[400px]"
+            initial="hidden"
+            animate={scrollNumber > 900 ? "visible" : "hidden"}
+            variants={fadeInUp}
+          >
+            <motion.video
+              ref={videoRef}
+              src="/video-laura-home.mp4"
+              className="md:w-[400px] w-[300px] rounded-3xl"
+              initial="hidden"
+              animate={scrollNumber > 800 ? "visible" : "hidden"}
+              variants={fadeInUp}
+            ></motion.video>
+            <motion.button
+              initial="hidden"
+              animate={scrollNumber > 800 ? "visible" : "hidden"}
+              variants={fadeInUp}
+              onClick={togglePlay}
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-50 rounded-full p-4 text-white"
+            >
+              {isPlaying ? <FaPause size={24} /> : <FaPlay size={24} />}
+            </motion.button>
+          </motion.div>
         </motion.div>
         <motion.div
           id="services"
@@ -224,8 +223,10 @@ export default function Home() {
             animate={scrollNumber > 1700 ? "visible" : "hidden"}
             variants={fadeInRight}
           >
-            <motion.div className="h-[470px] overflow-hidden w-full bg-cover bg-center" style={{backgroundImage: "url(/ac-maintenance.jpeg)"}}>
-            </motion.div>
+            <motion.div
+              className="h-[470px] overflow-hidden w-full bg-cover bg-center"
+              style={{ backgroundImage: "url(/ac-maintenance.jpeg)" }}
+            ></motion.div>
             <motion.h3 className="text-2xl font-bold text-[#2f2f2f]">
               AC Maintenance
             </motion.h3>
@@ -245,8 +246,10 @@ export default function Home() {
             animate={scrollNumber > 1700 ? "visible" : "hidden"}
             variants={fadeInRight}
           >
-            <motion.div className="h-[470px] overflow-hidden w-full bg-cover bg-center" style={{backgroundImage:"url(/dryer-vent-cleaning.jpeg)"}}>
-            </motion.div>
+            <motion.div
+              className="h-[470px] overflow-hidden w-full bg-cover bg-center"
+              style={{ backgroundImage: "url(/dryer-vent-cleaning.jpeg)" }}
+            ></motion.div>
             <motion.h3 className="text-2xl font-bold text-[#2f2f2f]">
               Dryer Vent Cleaning
             </motion.h3>
@@ -267,8 +270,10 @@ export default function Home() {
             animate={scrollNumber > 1700 ? "visible" : "hidden"}
             variants={fadeInRight}
           >
-            <motion.div className="h-[470px] overflow-hidden bg-cover bg-center w-full" style={{backgroundImage: "url(/air-duct-cleaning.jpeg)"}}>
-            </motion.div>
+            <motion.div
+              className="h-[470px] overflow-hidden bg-cover bg-center w-full"
+              style={{ backgroundImage: "url(/air-duct-cleaning.jpeg)" }}
+            ></motion.div>
             <motion.h3 className="text-[#2f2f2f] text-2xl font-bold">
               Air Duct Cleaning
             </motion.h3>
@@ -368,26 +373,24 @@ export default function Home() {
           initial="hidden"
           animate={{ opacity: 1, transition: { duration: 0.8 } }}
         >
-            <motion.div
-              initial="hidden"
-              animate={{
-                opacity: 1,
-                transition: { duration: 0.8, delay: 0.4 },
-              }}
-              className="bg-cover bg-center h-[250px] w-[160px]"
-              style={{backgroundImage: "url(/dryer-certified.jpeg)"}}
-            >
-            </motion.div>
-            <motion.div
-              initial="hidden"
-              animate={{
-                opacity: 1,
-                transition: { duration: 0.8, delay: 0.6 },
-              }}
-              className="bg-contain bg-no-repeat bg-center h-[250px] w-[160px]"
-              style={{backgroundImage: "url(/epa-certification.jpg)"}}
-            >
-            </motion.div>
+          <motion.div
+            initial="hidden"
+            animate={{
+              opacity: 1,
+              transition: { duration: 0.8, delay: 0.4 },
+            }}
+            className="bg-cover bg-center h-[250px] w-[160px]"
+            style={{ backgroundImage: "url(/dryer-certified.jpeg)" }}
+          ></motion.div>
+          <motion.div
+            initial="hidden"
+            animate={{
+              opacity: 1,
+              transition: { duration: 0.8, delay: 0.6 },
+            }}
+            className="bg-contain bg-no-repeat bg-center h-[250px] w-[160px]"
+            style={{ backgroundImage: "url(/epa-certification.jpg)" }}
+          ></motion.div>
           <motion.div
             className="h-[250px] w-[300px] bg-center bg-contain bg-no-repeat"
             style={{ backgroundImage: "url('/esco-logo.png')" }}
@@ -506,6 +509,13 @@ export default function Home() {
             ></input>
             <label>
               Service Needed <span className="text-red-600 font-bold">*</span>
+            </label>
+            <input
+              type="text"
+              className="border-b-[#1f1f1f] border-b-[1px] p-3"
+            ></input>
+            <label>
+              Location <span className="text-red-600 font-bold">*</span>
             </label>
             <input
               type="text"

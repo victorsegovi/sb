@@ -69,9 +69,9 @@ export default function Header({ active }) {
                 </div>
                 <div className={`flex flex-col gap-4 p-2 border-l-2 border-l-[#0170B9] ${ACMToggle? "flex":"hidden"}`}>
                   <a onClick={()=>router.push('/services/ac-maintenance/evaporator-cleaning')}>Evaporator Cleaning</a>
-                  <a>Capacitor Replacement</a>
-                  <a>Condenser Cleaning</a>
-                  <a>Refrigerant Recharge</a>
+                  <a onClick={()=>router.push('/services/ac-maintenance/capacitor-replacement')}>Capacitor Replacement</a>
+                  <a onClick={()=>router.push('/services/ac-maintenance/condenser-cleaning')}>Condenser Cleaning</a>
+                  <a onClick={()=>router.push('/services/ac-maintenance/refrigerant-recharge')}>Refrigerant Recharge</a>
                 </div>
               </div>
               <div onClick={() => router.push("/services/heating")}>

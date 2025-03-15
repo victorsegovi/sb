@@ -2,6 +2,7 @@
 import Header from "@/app/components/Header";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import WhatsappButton from "../../components/Whatsapp"
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
@@ -61,6 +62,7 @@ export default function UVLight() {
     <>
       <Header active={"Services"}></Header>
       <main className="flex flex-col gap-10 p-10 items-center">
+        <WhatsappButton/>
         <motion.div className="lg:w-[60%] flex flex-col gap-10">
           <motion.h1
             className="text-4xl text-[#0170b9]"

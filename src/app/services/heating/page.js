@@ -1,41 +1,20 @@
 "use client";
 import Header from "@/app/components/Header";
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import WhatsappButton from "@/app/components/Whatsapp";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
 };
 
-const fadeInRight = {
-  hidden: { opacity: 0, x: -50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 1 } },
-};
-
-function getScrollY() {
-  if (typeof window !== "undefined") {
-    return window.scrollY;
-  }
-  return 0;
-}
 
 export default function Heating() {
-    const [scrollNumber, setScrollNumber] = useState(0);
-    useEffect(() => {
-      const handleScroll = () => {
-        setScrollNumber(() => getScrollY());
-      };
-  
-      window.addEventListener("scroll", handleScroll);
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }, []);
   return (
     <>
       <Header active={"Services"}></Header>
       <main className="flex flex-col items-center gap-10 p-10">
+        <WhatsappButton/>
         <motion.div className="w-full lg:w-1/2 flex flex-col gap-4">
           <motion.h1 className="text-4xl text-[#0170b9]"
           initial="hidden"

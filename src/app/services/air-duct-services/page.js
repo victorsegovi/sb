@@ -2,6 +2,7 @@
 import Header from "@/app/components/Header";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import WhatsappButton from "@/app/components/Whatsapp";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
@@ -37,6 +38,7 @@ export default function AirDuct() {
     <>
       <Header active={"Services"}></Header>
       <main className="flex flex-col gap-10 items-center">
+        <WhatsappButton/>
         <motion.div className="bg-[#2f2f2f] text-[#fafafa] p-10 flex flex-col gap-4">
           <motion.h1
             className="text-4xl"
