@@ -1,59 +1,50 @@
-"use client"
+"use client";
 
 import Header from "../components/Header";
-import {motion} from "framer-motion"
-import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import WhatsappButton from "../components/Whatsapp";
 import Map from "../components/Map";
 
 const fadeInUp = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-  };
-  
-  const fadeInRight = {
-    hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
-  };
-  
-  function getScrollY() {
-    if (typeof window !== "undefined") {
-      return window.scrollY;
-    }
-    return 0;
-  }
-  
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+};
 
-export default function Contact(){
-    const [scrollNumber, setScrollNumber] = useState(0);
-    const center = [32.8975, 97.0404]; // Example: London coordinates
-    const zoom = 13;
-  
-    const togglePlay = () => {
-      console.log(videoRef.current);
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
+const fadeInRight = {
+  hidden: { opacity: 0, x: -50 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+};
+
+function getScrollY() {
+  if (typeof window !== "undefined") {
+    return window.scrollY;
+  }
+  return 0;
+}
+
+export default function Contact() {
+  const [scrollNumber, setScrollNumber] = useState(0);
+  const center = [32.8975, 97.0404];
+  const zoom = 13;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollNumber(() => getScrollY());
     };
-  
-    useEffect(() => {
-      const handleScroll = () => {
-        setScrollNumber(() => getScrollY());
-      };
-  
+
+    if (typeof window !== "undefined") {
       window.addEventListener("scroll", handleScroll);
       return () => {
         window.removeEventListener("scroll", handleScroll);
       };
-    }, []);
-    return(
-        <>
-        <Header active={"Contact"}></Header>
-        <WhatsappButton/>
-        <main>
+    }
+  }, []);
+  return (
+    <>
+      <Header active={"Contact"}></Header>
+      <main>
+      <WhatsappButton />
         <motion.div
           id="contact"
           className="p-10 flex flex-col gap-10 items-center justify-center"
@@ -179,7 +170,7 @@ export default function Contact(){
         <motion.div className="p-20">
           <Map center={center} zoom={zoom}></Map>
         </motion.div>
-        </main>
+      </main>
     </>
-    )
+  );
 }
