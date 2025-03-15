@@ -30,7 +30,7 @@ const Map = ({ center, zoom }) => {
     };
   }, [center, zoom]);
 
-  return <div id="map" style={{ height: '400px', width: '100%' }}></div>;
+  return <div id="map" style={{ height: '400px', width: '100%' }} className='z-10'></div>;
 };
 
 export default Map;

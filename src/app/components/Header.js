@@ -33,7 +33,7 @@ export default function Header({ active }) {
   }
   return (
     <>
-      <header className="hidden lg:flex justify-between items-center p-4 text-[#0170B9] bg-[#FAFAFA] top-0 sticky z-50">
+      <header className="hidden lg:flex justify-between items-center p-4 text-[#0170B9] bg-[#FAFAFA] top-0 sticky z-[999]">
         <Image src="/logo-circular.png" alt="Logo" width={100} height={100} />
         <ul className="flex gap-4 font-medium">
           <li
@@ -131,7 +131,7 @@ export default function Header({ active }) {
           </a>
         </div>
       </header>
-      <header className="lg:hidden flex justify-between items-center p-4 text-[#0170B9] bg-[#FAFAFA] top-0 sticky z-50">
+      <header className="lg:hidden flex justify-between items-center p-4 text-[#0170B9] bg-[#FAFAFA] top-0 sticky z-[999]">
         <Image src="/logo-circular.png" alt="Logo" width={120} height={120} />
 
         <HiMiniBars3BottomRight

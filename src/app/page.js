@@ -9,6 +9,7 @@ import { useState, useEffect, useRef } from "react";
 import { FaPlay, FaPause } from "react-icons/fa";
 import FacebookReviews from "./components/FacebookReviews";
 import WhatsappButton from "./components/Whatsapp";
+import Reviews from "./components/Reviews";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
@@ -31,6 +32,24 @@ export default function Home() {
   const [scrollNumber, setScrollNumber] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
+
+  const images = [
+    '/review-1.png',
+    '/review-2.png',
+    '/review-3.png',
+    '/review-4.png',
+    '/review-5.png',
+    '/review-6.png',
+    '/review-7.png',
+    '/review-8.png',
+    '/review-9.png',
+    '/review-10.png',
+    '/review-11.png',
+    '/review-12.png',
+    '/review-13.png',
+    '/review-14.png',
+  ];
+
 
   const togglePlay = () => {
     console.log(videoRef.current);
@@ -146,16 +165,16 @@ export default function Home() {
             </motion.div>
           </motion.div>
         </motion.div>
-        <motion.div className="p-10 flex flex-col justify-center items-center bg-[#FFFFFF] rounded-b-[16%] gap-4">
-          {/* <motion.h2
+        <motion.div className="p-10 flex flex-col justify-center items-center bg-[#FFFFFF] rounded-b-[16%] gap-4 w-[100vw]">
+          <motion.h2
               className="text-[#2f2f2f] text-2xl"
               initial="hidden"
               animate={scrollNumber > 900 ? "visible" : "hidden"}
               variants={fadeInRight}
             >
               Our Experience Speaks for itself
-            </motion.h2> */}
-          {/* <FacebookReviews></FacebookReviews> */}
+            </motion.h2> 
+           <Reviews images={images}/>
         </motion.div>
         <motion.div
           id="experience"
