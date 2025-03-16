@@ -108,6 +108,7 @@ export default function Home() {
               Heating and Dryer Vent Cleaning
             </motion.h4>
             <motion.a
+              href="sms:19407583617"
               className="p-3 w-full bg-[#0170B9] font-medium text-[#FFFFFF] hover:bg-[#47b6ff] cursor-pointer"
               initial="hidden"
               animate="visible"
@@ -255,7 +256,9 @@ export default function Home() {
               the life of your unit, and helps lower energy bills by improving
               efficiency.
             </motion.p>
-            <motion.a className="w-full text-center bg-center bg-cover p-3 bg-[#0170B9] font-medium text-[#FFFFFF] hover:bg-[#47b6ff] transition-all duration-500 cursor-pointer">
+            <motion.a 
+            href="sms:19407583617"
+            className="w-full text-center bg-center bg-cover p-3 bg-[#0170B9] font-medium text-[#FFFFFF] hover:bg-[#47b6ff] transition-all duration-500 cursor-pointer">
               Schedule Service
             </motion.a>
           </motion.div>
@@ -279,7 +282,8 @@ export default function Home() {
               built-up lint, improve airflow and help your dryer more
               efficiently, saving your time and energy.
             </motion.p>
-            <motion.a className="w-full text-center p-3 bg-[#0170B9] font-medium text-[#FFFFFF] hover:bg-[#47b6ff] transition-all duration-500 cursor-pointer">
+            <motion.a 
+            href="sms:19407583617" className="w-full text-center p-3 bg-[#0170B9] font-medium text-[#FFFFFF] hover:bg-[#47b6ff] transition-all duration-500 cursor-pointer">
               Schedule Service
             </motion.a>
           </motion.div>
@@ -302,7 +306,9 @@ export default function Home() {
               conditioning system. We recommend your air ducts receive a
               cleaning every two years.
             </motion.p>
-            <motion.a className="w-full text-center p-3 bg-[#0170B9] font-medium text-[#FFFFFF] hover:bg-[#47b6ff] transition-all duration-500 cursor-pointer">
+            <motion.a 
+            href="sms:19407583617"
+            className="w-full text-center p-3 bg-[#0170B9] font-medium text-[#FFFFFF] hover:bg-[#47b6ff] transition-all duration-500 cursor-pointer">
               Schedule Service
             </motion.a>
           </motion.div>
@@ -468,7 +474,7 @@ export default function Home() {
               team is happy to assist you in maintaining the quality and comfort
               of your home.
             </motion.p>
-            <motion.a
+            <motion.a href="sms:19407583617"
               className="p-3 w-full bg-[#0170B9] font-medium text-[#FFFFFF] hover:bg-[#47b6ff] transition-all duration-500 cursor-pointer text-center"
               initial="hidden"
               animate={scrollNumber > 2700 ? "visible" : "hidden"}

@@ -89,7 +89,7 @@ export default function Contact() {
             </motion.p>
             <motion.a
               className="p-3 w-full bg-[#0170B9] font-medium text-[#FFFFFF] hover:bg-[#47b6ff] transition-all duration-500 cursor-pointer text-center"
-              href="sms:9407583617"
+              href="sms:19407583617"
               initial="hidden"
               animate="visible"
               variants={{
