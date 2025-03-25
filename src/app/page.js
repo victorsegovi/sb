@@ -10,6 +10,7 @@ import { FaPlay, FaPause } from "react-icons/fa";
 import FacebookReviews from "./components/FacebookReviews";
 import WhatsappButton from "./components/Whatsapp";
 import Reviews from "./components/Reviews";
+import { useRouter } from "next/navigation";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
@@ -32,6 +33,7 @@ export default function Home() {
   const [scrollNumber, setScrollNumber] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
+  const router = useRouter()
 
   const images = [
     '/review-1.png',
@@ -91,21 +93,20 @@ export default function Home() {
             variants={fadeInUp}
           >
             <motion.h1
-              className={`text-4xl font-bold text-[#2f2f2f] text-justify`}
+              className={`text-4xl font-bold text-[#2f2f2f] text-left`}
               initial="hidden"
               animate="visible"
               variants={fadeInRight}
             >
-              Guarantee the comfort of your home
+              Your home is your <span className="text-[#0170B9]">comfort</span>
             </motion.h1>
             <motion.h4
-              className={` text-2xl text-[#2f2f2f] text-justify`}
+              className={` text-2xl text-[#2f2f2f] text-left`}
               initial="hidden"
               animate="visible"
               variants={fadeInRight}
             >
-              and live to the fullest Maintenance Services and repair AC system
-              Heating and Dryer Vent Cleaning
+              Reliable HVAC services in DFW
             </motion.h4>
             <motion.a
               href="sms:19407583617"
@@ -143,7 +144,7 @@ export default function Home() {
             <motion.div className="bg-gradient-to-b lg:bg-gradient-to-r from-[#FFFFFF] to-transparent w-full min-h-[200px]"></motion.div>
           </motion.div>
         </motion.div>
-        <motion.div id="about-us" className="bg-[#353941] p-10">
+        <motion.div id="about-us" className="bg-linear-180 to-[#2563eb] from-[#021c55] p-10">
           <motion.div className="flex flex-col justify-center items-center md:flex-row p-10 gap-4 text-[#FFFFFF]">
             <motion.div
               className="md:w-1/2"
@@ -164,6 +165,20 @@ export default function Home() {
                 comfortable.
               </motion.p>
             </motion.div>
+          </motion.div>
+          <motion.div className="relative m-10 h-[400px]">
+            <div className="h-[400px] bg-center bg-cover" style={{backgroundImage: "url(/about-us-image.jpg)"}}>
+
+            </div>
+            <motion.a
+              className="p-3 text-center w-1/2 left-1/2 -translate-x-1/2 bg-[#FFFFFF] font-medium text-[#023455] hover:bg-[#47b6ff] cursor-pointer border-2 border-[#023455] absolute"
+              initial="hidden"
+              animate="visible"
+              variants={fadeInRight}
+              onClick={()=>router.push("/about-us")}
+            >
+              Learn More
+            </motion.a>
           </motion.div>
         </motion.div>
         <motion.div className="p-10 flex flex-col justify-center items-center bg-[#FFFFFF] rounded-b-[16%] gap-4 w-[100vw]">
