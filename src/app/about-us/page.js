@@ -57,7 +57,7 @@ export default function AboutUs() {
           </motion.h1>
           <div className="bg-[#0170b9] flex flex-col justify-between items-center text-[#FAFAFA] rounded-bl-4xl border-[#0170b9] border-2 rounded-tr-4xl overflow-hidden lg:w-[30%]">
             <h2 className="p-5 text-4xl">Let&apos;s Meet!</h2>
-            <p className="p-5">Sanchez Brothers AC was founded in Dallas Texas. We're more than just an Air Conditioning maintenance and repair company.</p>
+            <p className="p-5">Sanchez Brothers AC was founded in Dallas Texas. We&apos;re more than just an Air Conditioning maintenance and repair company.</p>
             <div className="w-full h-[250px] lg:h-[300px] bg-center bg-cover" style={{backgroundImage:"url(../lets-meet.jpg)"}}></div>
           </div>
           <div className="bg-[#0170b9] flex flex-col justify-center items-center text-[#FAFAFA] rounded-bl-4xl border-[#0170b9] border-2 rounded-tr-4xl overflow-hidden lg:w-[30%]">
