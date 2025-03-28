@@ -4,6 +4,7 @@ import { motion} from "framer-motion";
 import Header from "@/app/components/Header";
 import { useState, useEffect } from "react";
 import WhatsappButton from "@/app/components/Whatsapp";
+import Questions from "@/app/components/Questions";
 
 const fadeInRight = {
   hidden: { opacity: 0, x: -50 },
@@ -30,6 +31,17 @@ export default function CondenserCleaning() {
     };
   }, []);
 
+  const questions = [
+    {
+      title:"Why clean your condenser",
+      answer:"Regular condenser cleaning not only keeps your system running smoothly you can get indoor comfort and air quality"
+    },
+    {
+      title:"Benefits",
+      answer:"Improved Energy Efficiency: Clean condenser coils allow your AC system to cool more effectively, reducing energy consumption and lowering your utility bills. Enhanced Cooling Performance: A clean condenser ensures your system maintains optimal cooling, keeping your home comfortable even during the hottest days. Extended Equipment Lifespan: Regular maintenance prevents strain on your system, reducing the risk of breakdowns and extending the life of your AC unit. Reduced Repair Costs: Preventing dirt and debris buildup helps avoid costly repairs caused by overheating or system malfunctions.Better Indoor Air Quality: A clean condenser contributes to better airflow and reduces the circulation of dust and allergens inside your home."
+    },
+  ]
+
   return (
     <>
       <Header active={"Services"}></Header>
@@ -43,12 +55,7 @@ export default function CondenserCleaning() {
           <h1 className="text-4xl text-[#0170b9]">
             Condenser Cleaning Service
           </h1>
-          <p>
-            The condenser plays a critical role in your air conditioning system,
-            our professional condenser cleaning service ensures your AC operates
-            at peak performance. Regular condenser cleaning not only keeps your
-            system running smoothly you can get indoor comfort and air quality.
-          </p>
+          <Questions questions={questions}/>
         </motion.div>
         <motion.div className="p-10 w-full text-justify flex flex-col gap-4 bg-[#01709B] text-[#FAFAFA] items-center"
                 initial="hidden"

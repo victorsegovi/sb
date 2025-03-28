@@ -3,16 +3,13 @@ import Header from "@/app/components/Header";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import WhatsappButton from "../../components/Whatsapp"
+import Questions from "@/app/components/Questions";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
 };
 
-const fadeInRight = {
-  hidden: { opacity: 0, x: -50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 1 } },
-};
 
 function getScrollY() {
   if (typeof window !== "undefined") {
@@ -58,6 +55,17 @@ export default function UVLight() {
     },
   };
 
+  const questions_1 = [
+    {
+      title: "Clean Air",
+      answer:"UV (ultraviolet) light technology helps improve indoor air quality by eliminating bacteria, mold, and viruses within your HVAC system"
+    },
+    {
+      title: "Avoid Sickness",
+      answer:"An UV LIGHT SERVICE, provides a cleaner and healthier environment for your home or business"
+    }
+  ]
+
   return (
     <>
       <Header active={"Services"}></Header>
@@ -72,13 +80,14 @@ export default function UVLight() {
           >
             UV Light Service
           </motion.h1>
-          <motion.p initial="hidden" variants={fadeInUp} animate="visible">
+          {/* <motion.p initial="hidden" variants={fadeInUp} animate="visible">
             Sanchez Brothers offer professional UV light installation services
             for air conditioning systems. UV (ultraviolet) light technology
             helps improve indoor air quality by eliminating bacteria, mold, and
             viruses within your HVAC system, providing a cleaner and healthier
             environment for your home or business.
-          </motion.p>
+          </motion.p> */}
+          <Questions questions={questions_1}/>
         </motion.div>
         <motion.div className="lg:w-[60%] flex flex-col gap-10">
           <motion.h2
@@ -136,6 +145,10 @@ export default function UVLight() {
               asthma sufferers.
             </li>
           </motion.ul>
+          <motion.div style={{backgroundImage: "url(../uv-light.jpg)"}} className="w-full h-[400px] bg-center bg-cover rounded-bl-4xl border-[#0170b9] border-2 rounded-tr-4xl"
+                      initial="hidden"
+                      variants={fadeInUp}
+                      animate={scrollNumber > 450 ? "visible" : "hidden"}></motion.div>
         </motion.div>
         <motion.div className="lg:w-[60%] flex flex-col w-full">
           <motion.h2

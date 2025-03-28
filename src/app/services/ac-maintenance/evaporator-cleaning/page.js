@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Header from "@/app/components/Header";
 import { useState, useEffect } from "react";
 import WhatsappButton from "@/app/components/Whatsapp";
+import Questions from "@/app/components/Questions";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
@@ -62,6 +63,14 @@ export default function EvaporatorCleaning() {
     },
   };
 
+  const questions_1 = [
+    {
+      title: "Why is it essential?",
+      answer: "Evaporator coil cleaning is essential to ensure the optimal performance of your air conditioning system"
+    },
+    {title:"What is this?", answer:"The evaporator coil plays a crucial role in cooling the air and maintaining a comfortable environment in your home or business"}
+  ]
+
   return (
     <>
       <Header active={"Services"}></Header>
@@ -72,12 +81,13 @@ export default function EvaporatorCleaning() {
                     variants={fadeInUp}
                     animate="visible">
           <h1 className="text-4xl text-[#0170b9]">Evaporator Coil Cleaning</h1>
-          <p className="text-justify">
+          {/* <p className="text-justify">
             Evaporator coil cleaning is essential to ensure the optimal
             performance of your air conditioning system. The evaporator coil
             plays a crucial role in cooling the air and maintaining a
             comfortable environment in your home or business.
-          </p>
+          </p> */}
+          <Questions questions={questions_1} number={2}/>
         </motion.div>
         <motion.div className="mt-4 w-full min-h-[400px] lg:min-h-[600px] flex items-center justify-center gap-8 flex-wrap"
                     initial="hidden"

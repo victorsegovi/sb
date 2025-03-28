@@ -3,6 +3,7 @@ import Header from "@/app/components/Header";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import WhatsappButton from "@/app/components/Whatsapp";
+import Questions from "@/app/components/Questions";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
@@ -33,6 +34,21 @@ export default function ACMaintenance() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const questions = [
+    {
+      title: "Why is my AC System Failing?",
+      answer: "Over time, dust and dir can build up in your AC unit, reducing its performance and increasing energy consumption"
+    },
+    {
+      title: "How can we help you?",
+      answer: "By scheduling routine maintenance, you ensure: Improved Efficiency, Longer Lifespan, Better Air Quality, Reduced Break-downs"
+    },
+    {
+      title: "Ensure your AC System",
+      answer: "Our professional maintenance services ensure your AC system operates at its best, providing comfort and peace of mind all year long"
+    }
+  ]
   return (
     <>
       <Header active={"Services"}></Header>
@@ -53,17 +69,7 @@ export default function ACMaintenance() {
             >
               AC Maintenance Service
             </motion.h1>
-            <motion.p initial="hidden" animate="visible" variants={fadeInRight}>
-              Regular air conditioning maintenance is essential to keep your
-              system running efficiently and effectively. Over time, dust and
-              dirt can build up in your AC unit, reducing its performance and
-              increasing energy consumption By scheduling routine maintenance,
-              you ensure: Improved Efficiency, Longer Lifespan, Better Air
-              Queality, Reduced Breakdowns.<br></br>
-              <br></br> Our Professional maintenance services ensure your AC
-              system operates at its best, providing comfort and peace of mind
-              all year long.
-            </motion.p>
+            <Questions questions={questions} number={3}/>
           </motion.div>
           <motion.div className="mt-4 w-full min-h-[400px] lg:min-h-[600px] flex items-center justify-center gap-8 flex-wrap">
             <motion.div
@@ -84,9 +90,9 @@ export default function ACMaintenance() {
             </motion.div>
           </motion.div>
         </motion.div>
-        <motion.div className="flex flex-col justify-center items-center gap-6">
+        <motion.div className="flex flex-col justify-center items-center gap-6 bg-[#0170b9] p-10 rounded-tl-4xl rounded-br-4xl text-[#FAFAFA]">
           <motion.h2
-            className="text-4xl text-[#0170b9]"
+            className="text-4xl"
             animate={scrollNumber > 650 ? "visible" : "hidden"}
             initial="hidden"
             variants={fadeInRight}
@@ -99,40 +105,40 @@ export default function ACMaintenance() {
             initial="hidden"
             variants={fadeInRight}
           >
-            <li className="list-disc">
+            <li >
               Checking Refrigerant levels Thermostat settings & Operation to
               ensure comfort & lower cooling bills
             </li>
-            <li className="list-disc">
+            <li >
               Making sure your evaporator and condenser coils are clean and
               functional
             </li>
-            <li className="list-disc">
+            <li >
               Cleaning and adjusting the blower component to provide proper
               airflow
             </li>
-            <li className="list-disc">
+            <li >
               Check fan blades and grilles to maintain optimal airflow
             </li>
-            <li className="list-disc">
+            <li >
               Checking the electrical connections to ensure safe operation
             </li>
-            <li className="list-disc">
+            <li >
               Checking the controls for proper operation and system cycling
             </li>
-            <li className="list-disc">
+            <li >
               Inspecting and teting the drains to ensure proper flow.
             </li>
-            <li className="list-disc">Drain Pan and Drain Lines</li>
-            <li className="list-disc">System Performance Check</li>
+            <li >Drain Pan and Drain Lines</li>
+            <li >System Performance Check</li>
           </motion.ul>
-        </motion.div>
-        <motion.a
+          <motion.a
           href="sms:19407583617"
-          className="w-full lg:w-[60%] text-center p-3 bg-[#0170B9] font-medium text-[#FFFFFF] hover:bg-[#47b6ff] transition-all duration-500"
+          className="w-full text-center p-3 bg-[#fafafa] font-medium text-[#0170B9] transition-all duration-500"
         >
           Schedule Service
         </motion.a>
+        </motion.div>
       </main>
     </>
   );

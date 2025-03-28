@@ -3,6 +3,7 @@ import Header from "@/app/components/Header";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import WhatsappButton from "@/app/components/Whatsapp";
+import Questions from "@/app/components/Questions";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
@@ -34,24 +35,32 @@ export default function DryerVent() {
     };
   }, []);
 
+  const questions = [
+    {
+      title:"Efficient Work",
+      answer:"Our dryer vent service ensures your dryer works efficiently and safely"
+    },
+    {
+      title:"Prevention",
+      answer:"Over time, dryer vents can get clogged with lint,causing longer drying yimer, higher energy bills, and even fire risks"
+    },
+    {
+      title:"Benefits",
+      answer:"Faster drying cycles, lower energy costs, reduced fire risk, professional and reliable service"
+    },
+  ]
+
   return (
     <>
       <Header active={"Services"}></Header>
-      <main className=" flex flex-col items-center justify-center gap-10">
+      <main className=" flex flex-col items-center justify-center gap-10 p-10">
         <WhatsappButton/>
-        <motion.div className="flex flex-col items-center justify-center gap-4 bg-[#2F2F2F] text-[#FAFAFA] p-10 text-center">
+        <motion.div className="flex flex-col justify-center gap-4 text-[#0170b9] p-10 lg:w-1/2">
           <motion.h1 className="text-4xl"
             initial="hidden"
             animate="visible"
             variants={fadeInRight}>Dryer Vent Cleaning</motion.h1>
-          <motion.p className="lg:max-w-[50%]"
-            initial="hidden"
-            animate="visible"
-            variants={fadeInRight}>
-            Our dryer vent service ensures your dryer works efficiently and
-            safely. Over time, dryer vents can get clogged with lint,causing
-            longer drying yimer, higher energy bills, and even fire risks.
-          </motion.p>
+            <Questions questions={questions}/>
         </motion.div>
         <motion.div className="min-h-[600px] justify-between p-10 items-center w-full max-w-[900px] flex flex-wrap gap-1">
           <motion.div
@@ -63,12 +72,12 @@ export default function DryerVent() {
             style={{ backgroundImage: "url(../dryer-2.jpg)" }}
           ></motion.div>
         </motion.div>
-        <motion.div className="text-[#FAFAFA] bg-[#101333] w-full p-10 flex flex-col justify-center items-center gap-4"
+        <motion.div className="w-full overflow-hidden flex flex-col justify-center items-center gap-4 rounded-bl-4xl border-[#0170b9] border-2 rounded-tr-4xl lg:w-1/2"
         initial="hidden"
         animate={scrollNumber > 400? "visible": "hidden"}
         variants={fadeInUp}>
-            <motion.h2 className="text-4xl">Why choose us?</motion.h2>
-            <motion.ul>
+            <motion.h2 className="text-4xl p-5 text-[#FAFAFA] bg-[#0170b9] w-full">Why choose us?</motion.h2>
+            <motion.ul className="p-5">
                 <li className="list-disc"><strong>Faster drying cycles</strong></li>
                 <li className="list-disc"><strong>Lower energy costs</strong></li>
                 <li className="list-disc"><strong>Reduced fire risk</strong></li>
@@ -77,7 +86,7 @@ export default function DryerVent() {
         </motion.div>
         <motion.a
           href="sms:19407583617"
-          className="w-full lg:w-[60%] text-center p-3 bg-[#0170B9] font-medium text-[#FFFFFF] hover:bg-[#47b6ff] transition-all duration-500 m-10"
+          className="w-full lg:w-1/2 text-center p-3 bg-[#0170B9] font-medium text-[#FFFFFF] hover:bg-[#47b6ff] transition-all duration-500 m-10"
         >
           Schedule Service
         </motion.a>

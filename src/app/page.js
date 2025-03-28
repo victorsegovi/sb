@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import Header from "./components/Header";
 import { FaTruck } from "react-icons/fa";
 import { BiSolidLike } from "react-icons/bi";
@@ -144,10 +143,9 @@ export default function Home() {
             <motion.div className="bg-gradient-to-b lg:bg-gradient-to-r from-[#FFFFFF] to-transparent w-full min-h-[200px]"></motion.div>
           </motion.div>
         </motion.div>
-        <motion.div id="about-us" className="bg-linear-180 to-[#2563eb] from-[#021c55] p-10">
-          <motion.div className="flex flex-col justify-center items-center md:flex-row p-10 gap-4 text-[#FFFFFF]">
+        <motion.div id="about-us" className="bg-linear-180 to-[#2563eb] from-[#021c55] p-10 flex flex-col lg:flex-row lg:items-center">
+          <motion.div className="flex flex-col justify-center items-center p-10 gap-4 text-[#FFFFFF] lg:w-1/2">
             <motion.div
-              className="md:w-1/2"
               initial="hidden"
               animate={scrollNumber > 400 ? "visible" : "hidden"}
               variants={fadeInUp}
@@ -166,12 +164,14 @@ export default function Home() {
               </motion.p>
             </motion.div>
           </motion.div>
-          <motion.div className="relative m-10 h-[400px]">
-            <div className="h-[400px] bg-center bg-cover" style={{backgroundImage: "url(/about-us-image.jpg)"}}>
+          <motion.div className="relative flex flex-col items-center lg:w-1/2 h-[300px]">
+          <motion.div className="h-[300px] w-2/3 rounded-bl-4xl border-2 border-[#FAFAFA] rounded-tr-4xl overflow-hidden">
+            <div className="h-[300px] bg-center bg-cover" style={{backgroundImage: "url(/about-us-image.jpg)"}}>
 
             </div>
-            <motion.a
-              className="p-3 text-center w-1/2 left-1/2 -translate-x-1/2 bg-[#FFFFFF] font-medium text-[#023455] hover:bg-[#47b6ff] cursor-pointer border-2 border-[#023455] absolute"
+          </motion.div>
+          <motion.a
+              className="p-3 text-center w-1/2 left-1/2 -translate-x-1/2 bg-[#FFFFFF] font-medium text-[#023455] cursor-pointer absolute bottom-0 translate-y-1/2 rounded-4xl"
               initial="hidden"
               animate="visible"
               variants={fadeInRight}
@@ -183,12 +183,12 @@ export default function Home() {
         </motion.div>
         <motion.div className="p-10 flex flex-col justify-center items-center bg-[#FFFFFF] rounded-b-[16%] gap-4 w-[100vw]">
           <motion.h2
-              className="text-[#2f2f2f] text-2xl"
+              className="text-[#2f2f2f] text-4xl"
               initial="hidden"
               animate={scrollNumber > 900 ? "visible" : "hidden"}
               variants={fadeInRight}
             >
-              Our Experience Speaks for itself
+              See what our happy customers say
             </motion.h2> 
            <Reviews images={images}/>
         </motion.div>
