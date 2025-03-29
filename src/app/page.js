@@ -140,7 +140,7 @@ export default function Home() {
             animate="visible"
             variants={fadeInUp}
           >
-            <motion.div className="bg-gradient-to-b lg:bg-gradient-to-r from-[#FFFFFF] to-transparent w-full min-h-[200px]"></motion.div>
+            <motion.div className="bg-center bg-cover bg-gradient-to-b lg:bg-gradient-to-r from-[#FFFFFF] to-transparent w-full min-h-[200px]"></motion.div>
           </motion.div>
         </motion.div>
         <motion.div id="about-us" className="linear-gradient p-10 flex flex-col lg:flex-row lg:items-center">
@@ -194,7 +194,7 @@ export default function Home() {
         </motion.div>
         <motion.div
           id="experience"
-          className="bg-linear-180 to-[#2563eb] from-[#021c55] flex flex-col p-10 gap-4 justify-center items-center"
+          className="linear-gradient flex flex-col p-10 gap-4 justify-center items-center"
         >
           <motion.div
             className="w-1/2 max-w-[400px] gap-4 flex flex-col"
