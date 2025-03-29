@@ -145,7 +145,7 @@ export default function UVLight() {
               asthma sufferers.
             </li>
           </motion.ul>
-          <motion.div style={{backgroundImage: "url(../uv-light.jpg)"}} className="w-full h-[400px] bg-center bg-cover rounded-bl-4xl border-[#0170b9] border-2 rounded-tr-4xl"
+          <motion.div style={{backgroundImage: "url(../uv-light.jpg)"}} className="w-full h-[400px] bg-center bg-contain bg-no-repeat rounded-bl-4xl border-[#0170b9] border-2 rounded-tr-4xl"
                       initial="hidden"
                       variants={fadeInUp}
                       animate={scrollNumber > 450 ? "visible" : "hidden"}></motion.div>
