@@ -121,7 +121,7 @@ export default function EvaporatorCleaning() {
           </motion.h2>
           <motion.select
             onChange={handleSelectChange}
-            className="p-4 border-[#0170b9] border-2 font-medium rounded-t-2xl text-xl"
+            className="p-4 border-[#0170b9] bg-[#0170b9] text-[#FAFAFA] border-2 font-medium rounded-t-2xl text-xl"
             initial="hidden"
             variants={fadeInUp}
             animate={scrollNumber > 50 ? "visible" : "hidden"}
@@ -138,7 +138,7 @@ export default function EvaporatorCleaning() {
                   initial={scrollNumber > 50 && { opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 20 }}
-                  className="p-10 bg-[#0170b9] text-[#fafafa] rounded-b-xl text-xl"
+                  className="p-10 text-[#0170b9] bg-[#fafafa] border-2 rounded-b-xl text-xl"
                 >
                   <p>{questions[selectedQuestion].answer}</p>
                 </motion.div>
