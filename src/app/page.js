@@ -143,7 +143,7 @@ export default function Home() {
             <motion.div className="bg-gradient-to-b lg:bg-gradient-to-r from-[#FFFFFF] to-transparent w-full min-h-[200px]"></motion.div>
           </motion.div>
         </motion.div>
-        <motion.div id="about-us" className="bg-linear-180 to-[#2563eb] from-[#021c55] p-10 flex flex-col lg:flex-row lg:items-center">
+        <motion.div id="about-us" className="linear-gradient p-10 flex flex-col lg:flex-row lg:items-center">
           <motion.div className="flex flex-col justify-center items-center p-10 gap-4 text-[#FFFFFF] lg:w-1/2">
             <motion.div
               initial="hidden"
