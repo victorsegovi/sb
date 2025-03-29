@@ -32,7 +32,7 @@ export default function ReviewsPage() {
       <Header active={"Reviews"}></Header>
       <main className="flex flex-col items-center justify-center p-4">
         <WhatsappButton />
-        <div className="flex flex-col lg:flex-row gap-4 items-center justify-center w-full lg:w-1/2">
+        <div className="flex flex-col lg:flex-row gap-4 items-center justify-center w-full lg:w-1/2 ">
           <h1 className=" text-center text-[#0170B9] text-4xl lg:w-1/2">
             See what our happy customers say
           </h1>
@@ -41,17 +41,33 @@ export default function ReviewsPage() {
             className="w-[250px] h-[400px] bg-center bg-cover"
           ></div>
         </div>
-        <div className="overflow-hidden rounded-bl-4xl border-[#0170b9] border-2 rounded-tr-4xl flex flex-col lg:flex-row bg-[#0170b9] m-10 lg:w-1/2">
-          <div className="flex gap-4 text-4xl text-[#FAFAFA] p-4 items-center justify-center lg:w-1/2">
-            <FaFacebook></FaFacebook>
-            <FaStar />
-            <FaStar />
-            <FaStar />
-            <FaStar />
-            <FaStar />
+        <div className="overflow-hidden rounded-bl-4xl border-[#0170b9] border-2 rounded-tr-4xl flex flex-col lg:flex-row bg-[#0170b9] m-10 -mt-20 lg:w-1/2">
+          <div className="flex gap-4 text-[#FAFAFA] p-4 lg:p-6 items-center justify-center lg:w-1/2">
+            <FaFacebook
+              className="text-4xl lg:text-8xl"
+            ></FaFacebook>
+            <FaStar
+              className="text-4xl lg:text-8xl"
+            />
+            <FaStar
+              className="text-4xl lg:text-8xl"
+            />
+            <FaStar
+              className="text-4xl lg:text-8xl"
+            />
+            <FaStar
+              className="text-4xl lg:text-8xl"
+            />
+            <FaStar
+              className="text-4xl lg:text-8xl"
+            />
           </div>
-          <div className="rounded-tr-4xl rounded-bl-4xl p-4 bg-[#FAFAFA] lg:w-1/2">
-            <p>Throughout our journey, we are proud to share that we have achieved a 100% approval rating on Facebook and recieved outsanding reviews.</p>
+          <div className="rounded-tr-4xl rounded-bl-4xl p-4 lg:p-6 bg-[#FAFAFA] lg:w-1/2">
+            <p>
+              Throughout our journey, we are proud to share that we have
+              achieved a 100% approval rating on Facebook and recieved
+              outsanding reviews.
+            </p>
           </div>
         </div>
         <div
