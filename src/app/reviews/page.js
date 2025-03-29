@@ -32,7 +32,7 @@ export default function ReviewsPage() {
       <Header active={"Reviews"}></Header>
       <main className="flex flex-col items-center justify-center p-4">
         <WhatsappButton />
-        <div className="flex flex-col lg:flex-row gap-4 items-center justify-center w-full">
+        <div className="flex flex-col lg:flex-row gap-4 items-center justify-center w-full lg:w-1/2">
           <h1 className=" text-center text-[#0170B9] text-4xl lg:w-1/2">
             See what our happy customers say
           </h1>
@@ -41,7 +41,7 @@ export default function ReviewsPage() {
             className="w-[250px] h-[400px] bg-center bg-cover"
           ></div>
         </div>
-        <div className="overflow-hidden rounded-bl-4xl border-[#0170b9] border-2 rounded-tr-4xl flex flex-col lg:flex-row bg-[#0170b9] m-10">
+        <div className="overflow-hidden rounded-bl-4xl border-[#0170b9] border-2 rounded-tr-4xl flex flex-col lg:flex-row bg-[#0170b9] m-10 lg:w-1/2">
           <div className="flex gap-4 text-4xl text-[#FAFAFA] p-4 items-center justify-center lg:w-1/2">
             <FaFacebook></FaFacebook>
             <FaStar />
@@ -55,7 +55,7 @@ export default function ReviewsPage() {
           </div>
         </div>
         <div
-          className={`transition-all duration-700 flex flex-wrap gap-4 justify-around w-full overflow-hidden ${
+          className={`transition-all duration-700 flex flex-wrap gap-4 justify-around w-full lg:w-[70%] overflow-hidden ${
             show ? "h-auto" : "h-[400px] mb-10 relative"
           }`}
         >
@@ -70,7 +70,7 @@ export default function ReviewsPage() {
               );
             })}
           <div
-            className={`absolute top-0 lef-0 w-full h-full bg-linear-180 from-transparent to-[#FAFAFA] ${
+            className={`absolute top-0 lef-0 w-full h-full bg-linear-180 from-transparent to-[#FFF] ${
               show ? "hidden" : "block"
             }`}
           ></div>

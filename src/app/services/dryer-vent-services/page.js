@@ -64,11 +64,11 @@ export default function DryerVent() {
         </motion.div>
         <motion.div className="min-h-[600px] justify-between p-10 items-center w-full max-w-[900px] flex flex-wrap gap-1">
           <motion.div
-            className="bg-cover bg-center h-[600px] w-[49%]"
+            className="bg-cover bg-center h-[600px] w-full lg:w-[49%]"
             style={{ backgroundImage: "url(../dryer.jpg)" }}
           ></motion.div>
           <motion.div
-            className="bg-cover bg-center h-[600px] w-[49%]"
+            className="bg-cover bg-center h-[600px] w-full lg:w-[49%]"
             style={{ backgroundImage: "url(../dryer-2.jpg)" }}
           ></motion.div>
         </motion.div>
