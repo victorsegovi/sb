@@ -38,7 +38,7 @@ const Reviews = ({ bg, text, images }) => {
 
   <>
   <div className="flex flex-col-reverse lg:flex-row justify-between items-center">
-    <div className="flex items-center justify-between gap-1 rounded-full p-4 bg-[#0170b9] text-[#FAFAFA] h-[50px] text-2xl"><FaFacebook></FaFacebook><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></div>
+    <div className="flex items-center justify-between gap-1 rounded-full p-4 bg-[#0170b9] text-[#FAFAFA] h-[50px] text-2xl z-10"><FaFacebook></FaFacebook><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></div>
     <div style={{backgroundImage: "url(/logo-transparent.png)"}} className="w-[300px] bg-center bg-cover h-[400px] -mb-20"></div>
   </div>
   <div className="w-3/4 max-w-[800px] relative text-4xl z-10">
